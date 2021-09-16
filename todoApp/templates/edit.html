@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>To Do</title>
+</head>
+<body>
+    <div class="container">
+
+  
+        
+   <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
+            <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
+          </svg>
+        <span class="fs-4">To do </span>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Главная</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Информация</a>
+     
+    </div>
+
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">To Do</h1>
+      
+    <form  method="POST">
+        {% csrf_token %}
+     <!-- <label>Название задачи:</label>
+     <input type="text" name="title"> -->
+
+     <div class="input-group input-group-sm ">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Название задачи:</span>
+      <input type="text" value="{{todo.title}}" class="form-control" name="title" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+    </div>
+     <br>
+     <!-- <br> -->
+     <!-- <br> -->
+     <!-- <label>Описание задачи:</label>
+     <input type="text" name="description"> -->
+
+     <div class="input-group">
+      <span class="input-group-text">Описание задачи:</span>
+      <textarea class="form-control"  name="description" aria-label="With textarea">{{todo.description}}</textarea>
+    </div>
+
+
+    <!-- <br> -->
+    <br>
+     <input  class="btn btn-warning" type="submit" value="Сохранить">
+     <input  class="btn btn-dark" type="submit" value="Назад">
+    </form>   
+    
+    </header>
+
+
+
+</div>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
+</html>
